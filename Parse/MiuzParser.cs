@@ -11,7 +11,7 @@ namespace LittleOwl.Parse
         private string _getCurrentCity(IHtmlDocument document)
         {
             return ((IHtmlSelectElement)document.QuerySelectorAll("select[name = CITY]")
-                .Single(i => ((IHtmlSelectElement)i).Value != null)).Value!;
+                .First(i => ((IHtmlSelectElement)i).Value != null)).Value!;
         }
 
         private string? _getProductCities(IHtmlDocument document)
