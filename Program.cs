@@ -24,7 +24,7 @@ Console.WriteLine($"\nПроцес...");
 worker.Run();
 
 Console.WriteLine("\nСохранение...");
-string path = Environment.CurrentDirectory + @"\result.csv";
+string path = Environment.CurrentDirectory + @$"\result{DateTime.Now.Microsecond}.csv";
 
 using (var writer = new StreamWriter(path))
 using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
